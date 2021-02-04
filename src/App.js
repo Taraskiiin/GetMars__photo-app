@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
-import axios from "axios";
 
 import Container from "@material-ui/core/Container";
 
 import RoverDropdown from "./components/RoverDropdown/RoverDropdown";
 import CameraDropdown from "./components/CameraDropdown/CameraDropdown";
 import SolNumber from "./components/SolNumber/SolNumber";
+import PhotoBlock from "./components/PhotoBlock/PhotoBlock";
 
 const App = () => {
   const [listPhotos, setListPhotos] = useState(null);
   const [rover, setRover] = useState("");
   const [camera, setCamera] = useState("");
   const [sol, setSol] = useState("");
+  const [readyToGet, setReadyToGet] = useState(false);
   let camerasList = [];
 
   if (rover === "curiosity") {
@@ -28,7 +29,7 @@ const App = () => {
         name: "rhaz",
         fullname: "Rear Hazard Avoidance Camera",
       },
-      { 
+      {
         id: 3,
         name: "mast",
         fullname: "Mast Camera",
@@ -84,24 +85,36 @@ const App = () => {
       }
     );
   }
-  useEffect(() => {
-    axios
-      .get(
-        `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=xPuKdfjH5ud7bdVxmhtgn9iLEyHqxcNFpGoHtyJe`
-      )
-      .then(({ data }) => {
-        setListPhotos(data);
-      });
-  }, []);
+
+  if (sol < 1) {
+    setSol(1);
+  } else if (sol > 1000) {
+    setSol(1000);
+  }
+
+  const checkToReady = () => {
+    if (rover !== "" && camera !== "" && sol !== "") {
+      setReadyToGet(true);
+    } else {
+      alert("fields must be filled!");
+    }
+  };
   return (
     <div className="App">
       <Container maxWidth="sm">
-        <div className="form__block">
-          <RoverDropdown rover={rover} setRover={setRover} />
-          <CameraDropdown setCamera={setCamera} camerasList={camerasList} />
-          <SolNumber setSol={setSol} />
-          <button className="get__btn" onClick={() => console.log(rover, sol, camera)}>Get photos</button>
-        </div>
+        {readyToGet ? (
+          <PhotoBlock rover={rover} camera={camera} sol={sol} />
+        ) : (
+          <div className="form__block">
+            <h1 className="app__title">MARS ROVER PHOTOS</h1>
+            <RoverDropdown rover={rover} setRover={setRover} />
+            <CameraDropdown setCamera={setCamera} camerasList={camerasList} />
+            <SolNumber setSol={setSol} />
+            <button className="get__btn" onClick={() => checkToReady()}>
+              Get photos
+            </button>
+          </div>
+        )}
       </Container>
     </div>
   );

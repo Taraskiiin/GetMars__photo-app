@@ -8,6 +8,9 @@ export default function SolNumber({ setSol }) {
       id="standard-basic"
       label="Enter sol"
       type="number"
+      InputProps={{ inputProps: { min: 1, max: 1000 }}}
+      min={1}
+      max={1000}
       onChange={getData}
     />
   );
