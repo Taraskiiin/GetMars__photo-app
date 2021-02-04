@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/GetMars__photo-app/static/css/main.3532d14a.chunk.css",
-    "main.js": "/GetMars__photo-app/static/js/main.f0f57e52.chunk.js",
-    "main.js.map": "/GetMars__photo-app/static/js/main.f0f57e52.chunk.js.map",
-    "runtime-main.js": "/GetMars__photo-app/static/js/runtime-main.c07ee99f.js",
-    "runtime-main.js.map": "/GetMars__photo-app/static/js/runtime-main.c07ee99f.js.map",
-    "static/js/2.0af3b3c2.chunk.js": "/GetMars__photo-app/static/js/2.0af3b3c2.chunk.js",
-    "static/js/2.0af3b3c2.chunk.js.map": "/GetMars__photo-app/static/js/2.0af3b3c2.chunk.js.map",
-    "index.html": "/GetMars__photo-app/index.html",
-    "static/css/main.3532d14a.chunk.css.map": "/GetMars__photo-app/static/css/main.3532d14a.chunk.css.map",
-    "static/js/2.0af3b3c2.chunk.js.LICENSE.txt": "/GetMars__photo-app/static/js/2.0af3b3c2.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/GetMars__photo-app/static/media/407883-PDV3OG-225.43e977b9.jpg"
+    "main.css": "/mars-api-app/static/css/main.8d9cac36.chunk.css",
+    "main.js": "/mars-api-app/static/js/main.f0f57e52.chunk.js",
+    "main.js.map": "/mars-api-app/static/js/main.f0f57e52.chunk.js.map",
+    "runtime-main.js": "/mars-api-app/static/js/runtime-main.2c68a586.js",
+    "runtime-main.js.map": "/mars-api-app/static/js/runtime-main.2c68a586.js.map",
+    "static/js/2.0af3b3c2.chunk.js": "/mars-api-app/static/js/2.0af3b3c2.chunk.js",
+    "static/js/2.0af3b3c2.chunk.js.map": "/mars-api-app/static/js/2.0af3b3c2.chunk.js.map",
+    "index.html": "/mars-api-app/index.html",
+    "static/css/main.8d9cac36.chunk.css.map": "/mars-api-app/static/css/main.8d9cac36.chunk.css.map",
+    "static/js/2.0af3b3c2.chunk.js.LICENSE.txt": "/mars-api-app/static/js/2.0af3b3c2.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/mars-api-app/static/media/407883-PDV3OG-225.43e977b9.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.c07ee99f.js",
+    "static/js/runtime-main.2c68a586.js",
     "static/js/2.0af3b3c2.chunk.js",
-    "static/css/main.3532d14a.chunk.css",
+    "static/css/main.8d9cac36.chunk.css",
     "static/js/main.f0f57e52.chunk.js"
   ]
 }
