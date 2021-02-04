@@ -2,7 +2,7 @@ import React from "react";
 
 import { Select, MenuItem, FormControl } from "@material-ui/core";
 
-export default function RoverDropdown({rover, setRover}) {
+export default function RoverDropdown({ setRover }) {
   const handleChange = (e) => setRover(e.target.value);
   return (
     <FormControl>

@@ -1,0 +1,42 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("./img/407883-PDV3OG-225.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.MuiContainer-root {
+  height: 100%;
+}
+.form__block {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.MuiFormControl-root,
+.MuiFormControl-roo {
+  width: 40%;
+}
+.get__btn {
+  cursor: pointer;
+  width: 35%;
+  height: 40px;
+  background: #000000;
+  color: #9fb97a;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  border: 1px solid #9fb97a;
+  outline: 0;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 30px;
+}
+.get__btn:hover {
+  background: #9fb97a;
+  color: #fdff94;
+  box-shadow: 0 0 5px, 0 0 25px #9fb97a, 0 0 50px #9fb97a, 0 0 100px #9fb97a;
+}
