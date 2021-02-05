@@ -111,7 +111,6 @@ const App = () => {
   }
    else if (rover !== "" && camera !== "" && sol !== "" ) {
       setReadyToGet(true);
-      console.log(rover, sol, camera, listPhotos)
     } else {
       alert("Fields must be filled!");
     }
