@@ -51,3 +51,11 @@
                 0 0 40px #9fb97a,
                 0 0 60px #9fb97a;
 }
+.photos__block{
+  margin: 0 auto;
+  padding-top: 5%;
+  max-width: 70%;
+}
+.mars__photo{
+  height: 100%;
+}

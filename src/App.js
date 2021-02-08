@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import {getPhotos} from "./helpers/api"
+import {apiKey} from "./helpers/indexConfig"
 import "./App.css";
 
 import Container from "@material-ui/core/Container";
@@ -9,12 +11,23 @@ import SolNumber from "./components/SolNumber/SolNumber";
 import PhotoBlock from "./components/PhotoBlock/PhotoBlock";
 
 const App = () => {
-  const [listPhotos, setListPhotos] = useState(null);
+ 
   const [rover, setRover] = useState("");
   const [camera, setCamera] = useState("");
   const [sol, setSol] = useState("");
   const [readyToGet, setReadyToGet] = useState(false);
-  let camerasList = [];
+  const [listPhotos, setListPhotos] = useState(null);
+  let camerasList = []
+
+  useEffect(() => {
+    getPhotos(apiKey, rover, camera, sol)
+    .then(({ data }) => {
+      setListPhotos(data);
+    })
+    .catch((error) => {
+      console.log(error);
+  });            
+  }, [rover, camera, sol]);
 
   if (rover === "curiosity") {
     camerasList = [];
@@ -93,17 +106,21 @@ const App = () => {
   }
 
   const checkToReady = () => {
-    if (rover !== "" && camera !== "" && sol !== "") {
+  if (listPhotos.photos.length === 0) {
+    alert("According to these data we can not find anything! Enter please another data!");
+  }
+   else if (rover !== "" && camera !== "" && sol !== "" ) {
       setReadyToGet(true);
     } else {
-      alert("fields must be filled!");
+      alert("Fields must be filled!");
     }
   };
+
   return (
     <div className="App">
       <Container maxWidth="sm">
         {readyToGet ? (
-          <PhotoBlock rover={rover} camera={camera} sol={sol} />
+          <PhotoBlock listPhotos={listPhotos}/>
         ) : (
           <div className="form__block">
             <h1 className="app__title">MARS ROVER PHOTOS</h1>
